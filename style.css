@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121214;
+    color: #e1e1e6;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+h1 {
+    color: #4da6ff;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tab-btn {
+    background-color: #202024;
+    color: #a8a8b3;
+    border: 1px solid #29292e;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: #4da6ff;
+    color: #121214;
+    border-color: #4da6ff;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #202024;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #29292e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.category-title {
+    color: #00e676;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.symbol-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.symbol-bank button {
+    background-color: #29292e;
+    color: #e1e1e6;
+    border: 1px solid #323238;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.symbol-bank button:hover {
+    background-color: #383842;
+    border-color: #4da6ff;
+}
+
+.workspace {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#equation-input {
+    flex: 1;
+    background-color: #121214;
+    border: 2px solid #29292e;
+    color: #00e676;
+    padding: 15px;
+    font-size: 1.3rem;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 8px;
+}
+
+.clear-btn {
+    background-color: #e040fb;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.clear-btn:hover {
+    background-color: #d500f9;
+}

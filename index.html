@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educator Equation Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>📐 Teacher's Equation & Math Suite</h1>
+
+                               <div class="tabs">
+            <button class="tab-btn active" onclick="switchMainTab('equation-builder', this)">Layout Tools</button>
+            <button class="tab-btn" onclick="switchMainTab('universal-bank', this)">Universal Symbol Bank</button>
+            <button class="tab-btn" onclick="switchMainTab('graphing-calculator', this)">Graphing Calculator</button>
+            <button class="tab-btn" onclick="switchMainTab('ai-assistant', this)">AI Assistant</button>
+        </div>
+    </header>
+
+    <!-- Main Viewports -->
+    <main class="content" style="max-width: 800px; margin: 0 auto;">
+        
+        <!-- Tab 1: Structural Layout Tools -->
+        <section id="equation-builder">
+            <h2>Formatting Layout Toolkit</h2>
+            <p>Select structural formats, relations, and operators:</p>
+            <div class="category-title">🧱 Layout Formats & Brackets</div>
+            <div class="symbol-bank">
+                <button onclick="addSymbol('/')">Fraction ( / )</button>
+                <button onclick="addTemplate('√{', '}')">Square Root ( √ )</button>
+                <button onclick="addTemplate('_{', '}')">Custom Subscript ( _{x} )</button>
+                <button onclick="addTemplate('^{', '}')">Custom Power ( ^{x} )</button>
+                <button onclick="addSymbol('(')">(</button>
+                <button onclick="addSymbol(')')">)</button>
+            </div>
+            <div class="category-title">➕ Math Relations & Operators</div>
+            <div class="symbol-bank">
+                <button onclick="addSymbol(' + ')">+</button>
+                <button onclick="addSymbol(' − ')">−</button>
+                <button onclick="addSymbol(' × ')">×</button> 
+                <button onclick="addSymbol(' ÷ ')">÷</button>
+                <button onclick="addSymbol(' = ')">=</button>
+                <button onclick="addSymbol(' ∝ ')">∝ (Proportional)</button>
+                <button onclick="addSymbol(' ≈ ')">≈ (Approx)</button>
+            </div>
+        </section>
+
+        <!-- NEW Tab 2: Universal Variable Dictionary Bank -->
+                <!-- Tab 2: Universal Variable Dictionary Bank -->
+        <section id="universal-bank" style="display: none;">
+            <h2>Universal Physics Variable Bank</h2>
+            <p>Select a physics domain to display its individual variables:</p>
+            
+            <!-- Dynamic Topic Selector inside the Bank Tab -->
+            <div class="topic-selector-zone" style="margin-bottom: 25px;">
+                <label for="universal-topic-select" style="font-weight: bold; margin-right: 10px;">Select Physics Category:</label>
+                <select id="universal-topic-select" onchange="switchUniversalTopic()" style="background: #29292e; color: #e1e1e6; border: 1px solid #323238; padding: 8px 12px; border-radius: 6px; font-size: 1rem;">
+                    <option value="ubank-mechanics">⚙️ Mechanics & General</option>
+                    <option value="ubank-heat">🔥 Heat, Sound & Waves</option>
+                    <option value="ubank-optics">💡 Optics & Electricity</option>
+                </select>
+            </div>
+
+            <!-- DYNAMIC TOPIC CONTAINERS -->
+            
+            <!-- 1. Mechanics Sub-Bank -->
+            <div id="ubank-mechanics" class="universal-sub-bank">
+                <div class="category-title">⚙️ Mechanics Variable Components</div>
+                <div class="symbol-bank">
+                    <button onclick="addSymbol('m')">m (Mass)</button>
+                    <button onclick="addSymbol('v')">v (Velocity)</button>
+                    <button onclick="addSymbol('u')">u (Initial Vel)</button>
+                    <button onclick="addSymbol('a')">a (Acceleration)</button>
+                    <button onclick="addSymbol('g')">g (Gravity acceleration)</button>
+                    <button onclick="addSymbol('h')">h (Height)</button>
+                    <button onclick="addSymbol('s')">s (Displacement)</button>
+                    <button onclick="addSymbol('t')">t (Time)</button>
+                    <button onclick="addSymbol('F')">F (Force)</button>
+                    <button onclick="addSymbol('W')">W (Work)</button>
+                    <button onclick="addSymbol('P')">P (Power)</button>
+                    <button onclick="addSymbol('τ')">τ (Torque / Moment)</button>
+                </div>
+            </div>
+
+            <!-- 2. Heat & Sound Sub-Bank (Hidden by default) -->
+            <div id="ubank-heat" class="universal-sub-bank" style="display: none;">
+                <div class="category-title">🔥 Heat, Waves & Sound Components</div>
+                <div class="symbol-bank">
+                    <button onclick="addSymbol('Q')">Q (Heat energy)</button>
+                    <button onclick="addSymbol('c')">c (Specific heat)</button>
+                    <button onclick="addSymbol('L')">L (Latent heat)</button>
+                    <button onclick="addSymbol('Δ')">Δ (Delta / Change)</button>
+                    <button onclick="addSymbol('d')">d (Distance)</button>
+                    <button onclick="addSymbol('T')">T (Time Period)</button>
+                    <button onclick="addSymbol('f')">f (Frequency)</button>
+                    <button onclick="addSymbol('λ')">λ (Lambda / Wavelength)</button>
+                </div>
+            </div>
+
+            <!-- 3. Optics & Electricity Sub-Bank (Hidden by default) -->
+            <div id="ubank-optics" class="universal-sub-bank" style="display: none;">
+                <div class="category-title">💡 Optics & Current Electricity Components</div>
+                <div class="symbol-bank">
+                    <button onclick="addSymbol('μ')">μ (Refractive Index)</button>
+                    <button onclick="addSymbol('i')">i (Angle of Incidence)</button>
+                    <button onclick="addSymbol('r')">r (Angle of Refraction)</button>
+                    <button onclick="addSymbol('V')">V (Voltage)</button>
+                    <button onclick="addSymbol('I')">I (Current)</button>
+                    <button onclick="addSymbol('R')">R (Resistance)</button>
+                    <button onclick="addSymbol('ρ')">ρ (Resistivity)</button>
+                    <button onclick="addSymbol('Ω')">Ω (Ohm)</button>
+                    <button onclick="addSymbol('E')">E (Electromotive force)</button>
+                    <button onclick="addSymbol('N')">N (Number of Turns)</button>
+                    <button onclick="addSymbol('𝚽')">𝚽 (Magnetic Flux)</button>
+                    <button onclick="addSymbol('B')">B (Magnetic Field)</button>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Tab 3: Graphing Calculator -->
+        <section id="graphing-calculator" style="display: none;">
+            <h2>Desmos-Style Function Plotter</h2>
+            <div class="desmos-workspace" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div class="expression-list" style="flex: 1; min-width: 200px; background: #121214; padding: 15px; border-radius: 8px;">
+                    <input type="text" id="graph-expression" value="x^2 - 3" oninput="plotExpression()" style="width: 85%; background: #29292e; color: #00e676; border: 1px solid #323238; padding: 10px; border-radius: 6px; font-family: monospace;">
+                </div>
+                <div style="background: #ffffff; padding: 10px; border-radius: 8px; flex: 1.5; display: flex; justify-content: center;">
+                    <canvas id="myChart" width="400" height="250"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 4: AI Assistant -->
+        <section id="ai-assistant" style="display: none;">
+            <h2>AI Syllabus Chat Agent</h2>
+            <div id="chat-thread" style="background: #121214; border: 1px solid #29292e; height: 200px; border-radius: 8px; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; margin-bottom: 15px;">
+                <div style="background: #29292e; color: #e1e1e6; padding: 10px 14px; border-radius: 8px 8px 8px 0; max-width: 75%;">
+                    Hello! Ask me how to format equations, or look up standard formulas for your exam papers!
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="chat-msg-field" placeholder="Type a message..." style="flex: 1; background: #121214; border: 2px solid #29292e; color: #ffffff; padding: 12px; border-radius: 8px;" onkeydown="if(event.key==='Enter') sendChatMessage()">
+                <button onclick="sendChatMessage()" style="background: #00e676; color: #121214; border: none; padding: 0 25px; border-radius: 8px; font-weight: bold; cursor: pointer;">Send</button>
+            </div>
+        </section>
+
+        <!-- GLOBAL PERMANENT WORKSPACE (Stays visible across all tabs!) -->
+        <div style="margin-top: 30px; border-top: 2px solid #29292e; padding-top: 20px;">
+            <div class="category-title">📋 Active Exam Question Input Canvas</div>
+            <div class="workspace" style="display: flex; gap: 10px;">
+                <input type="text" id="equation-input" oninput="renderMath()" placeholder="Select layout elements or switch to Symbol Bank to add variables..." style="flex: 1; background: #121214; border: 2px solid #29292e; color: #00e676; padding: 15px; font-size: 1.2rem; border-radius: 8px;">
+                <button onclick="copyToClipboard()" style="background: #00e676; color: #121214; border: none; padding: 0 20px; border-radius: 8px; cursor: pointer; font-weight: bold;" id="copy-btn">Copy</button>
+                <button onclick="clearWorkspace()" class="clear-btn">Clear</button>
+            </div>
+
+            <div class="category-title" style="margin-top: 15px;">✨ Live Exam-Paper Preview</div>
+            <div id="math-preview" style="background: #121214; border: 2px dashed #29292e; color: #ffffff; padding: 25px; min-height: 50px; border-radius: 8px; font-size: 1.6rem; text-align: center; font-family: 'Courier New', Courier, monospace;"></div>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
